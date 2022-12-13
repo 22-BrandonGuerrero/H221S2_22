@@ -1,0 +1,59 @@
+CREATE DATABASE CarlosPedroSilvaLuyo;
+
+USE CarlosPedroSilvaLuyo;
+
+CREATE TABLE ALUMNO (
+    CODALU char(5),
+    NOMALU varchar(60) NOT NULL,
+    APEALU varchar(60) NOT NULL,
+    DIRALU varchar(100) NOT NULL,
+    CELALU char(9) NOT NULL,
+    EMAALU varchar(80) NOT NULL,
+    DNIALU char(8) NOT NULL,
+    FECNACALU date NOT NULL,
+    CODUBI char(6) NOT NULL,
+    CONSTRAINT CODALU_pk PRIMARY KEY (CODALU)
+);
+
+CREATE TABLE APODERADO (
+    CODAPO char(5),
+    NOMAPO varchar(60) NOT NULL,
+    APEAPO varchar(60) NOT NULL,
+    DIRAPO varchar(100) NOT NULL,
+    PROVAPO varchar(60) NOT NULL,
+    CELAPO char(9) NOT NULL,
+	EMAAPO varchar(80) NOT NULL,
+    DNIAPO char(8) NOT NULL,
+    CODUBI char(6) NOT NULL,
+    CONSTRAINT CODAPO_pk PRIMARY KEY (CODAPO)
+);
+
+CREATE TABLE ENCARGADO (
+    CODENC char(5),
+    NOMENC varchar(50) NOT NULL,
+    APEENC varchar(50) NOT NULL,
+    CELENC char(9) NOT NULL,
+    DNIENC char(8) NOT NULL,
+    EMAENC varchar(50) NOT NULL,
+    CONSTRAINT CODENC_pk PRIMARY KEY (CODENC)
+);
+
+CREATE TABLE MATRICULA (
+    IDMAT char(5),
+    CODENC char(5) NOT NULL,
+    CODAPO char(5) NOT NULL,
+    CODALU char(5) NOT NULL,
+    FECMAT date NOT NULL,
+    TIPMAT char(1) NOT NULL,
+    GRADMAT int NOT NULL,
+    CONSTRAINT IDMAT_pk PRIMARY KEY (IDMAT)
+);
+
+CREATE TABLE UBIGEO (
+    CODUBI char(6),
+    DISTUBI varchar(60) NOT NULL,
+    PROVUBI varchar(80) NOT NULL,
+    DEPUBI varchar(60) NOT NULL,
+    CONSTRAINT CODUBI_pk PRIMARY KEY (CODUBI)
+);
+
