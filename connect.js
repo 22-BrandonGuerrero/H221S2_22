@@ -41,7 +41,7 @@ var conexion = mysql.createConnection({
   host: "35.172.131.125",
   user: "brandon",
   password: "1234",
-  database: "dbRestaurante",
+  database: "formulario",
 });
 
 conexion.connect(function (error) {
