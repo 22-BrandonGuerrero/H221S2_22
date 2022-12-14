@@ -5,9 +5,15 @@ var express = require('express');
 var app = express();
 
 
-app.get('/', (req, res) => {
-//res.send('Hello World with express!')
-res.sendFile("/home/ubuntu/proyects/Lading-Servidor/index.html")
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(__dirname + '/'));
+
+app.get('/', function (req, res) {
+	res.sendFile(__dirname + "/index.html");
+});
+
+app.get('/login', function (req, res) {
+	res.sendFile(__dirname + "/login.html");
 });
 
 const puerto = process.env.PUERTO || 3000;
