@@ -69,7 +69,7 @@ app.post('/auth', function (request, response) {
 			if (error) throw error;
 
 			if (results.length > 0) {
-				response.redirect('/');
+				response.send('Te has logueado satisfactoriamente:, ' + request.body.username + '!');
 			} else {
 				response.send('Usuario y/o Contraseña Incorrecta');
 			}
